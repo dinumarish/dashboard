@@ -149,7 +149,7 @@ elif add_radio == 'Get Recommendations':
     rec_df,cluster = get_recommendations(page=page, n=int(n))
     
     st.text(f"Selected Page cluster :{cluster}")
-    st.table(df[df.index==int(ix)])
+    st.write(df[df.index==int(ix)])
     st.text(f"Recommedated pages from cluster {cluster}:")
     st.dataframe(rec_df)
     
@@ -163,7 +163,7 @@ elif add_radio == 'Cross-sell':
     rec_df,cluster, cluster2 = get_recommendations(page=page, n=int(n), cross_sell=True)
     
     st.text(f"Selected Page cluster :{cluster}")
-    st.table(df[df.index==int(ix)])
+    st.write(df[df.index==int(ix)])
     st.text(f"Cross-sell recommendation from cluster {cluster2}")
     st.write(rec_df)    
 
